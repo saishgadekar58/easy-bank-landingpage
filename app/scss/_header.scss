@@ -1,0 +1,148 @@
+.header{
+
+ ////burger open style
+&.open{
+
+       .header__toogle{
+        > span:first-child{
+            transform: rotate(45deg);
+            transform-origin: 3px 1px;
+            @include transition-f
+        }
+    
+        > span:nth-child(2){
+            opacity: 0;  
+            @include transition-f              
+        }
+    
+        > span:last-child{
+            transform: rotate(-45deg);
+            transform-origin: 3px 1px;    
+            @include transition-f            
+        }
+    }
+}
+    
+.overlay{
+
+
+        
+    background-image: linear-gradient($darkBlue,transparent);
+    position: fixed;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+
+    
+}
+//////////////
+
+  
+ 
+nav{
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+    position: relative;
+    background-color: $white;
+
+}
+
+    &__logo{
+        
+        img{
+            width: 8.8125rem;
+            height: 1.375rem;
+        }
+        
+    }
+
+    &__toogle{//mobile menu//
+
+        > span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $darkBlue;
+            transition: all 300ms ease-in-out;
+
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+
+&__menu{
+    background: $white;
+   
+    padding: 2rem;
+    position: absolute;
+    margin-top: 34px;
+    margin-left: 23px;;
+    width: calc(100% - 3rem);
+    z-index: 2;
+    
+    background: linear-gradient($limeGreen,$brightCyan);
+    
+    border-radius: 3px;
+
+
+    a{
+        color: $darkBlue;
+        display: block;
+        text-align: center;
+        padding: 0.625rem;
+        text-decoration: none;
+    }
+}
+
+
+    &__links{
+        
+
+        a{
+            font-size: $font-small;
+            color: $grayishBlue;
+            text-decoration: none;
+            position: relative;
+            transition: color 300ms ease-in-out;
+
+            &:not(:last-child){
+                margin-right: 32px;
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(to right,$limeGreen,$brightCyan);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+                left: 0;
+                right: 0;
+                bottom: -30px;
+            }
+
+            &:hover{
+                color: $darkBlue;
+                text-decoration: none;
+
+                &::before{
+                    opacity: 1;
+                }
+                
+            }
+        }
+    }
+
+
+    
+    
+}
+////spacing
+
+
+
